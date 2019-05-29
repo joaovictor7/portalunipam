@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-button end (click)="voltar()">
+        <ion-icon name="md-close-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Periodos Letivos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let periodoLetivo of listaPeriodosLetivos">
+    <ion-label>{{periodoLetivo.CodigoPeriodoLetivo}}</ion-label>
+    <ion-label>{{periodoLetivo.DescricaoPeriodoLetivo}}</ion-label>
+    <ion-button (click)="evento(disciplina)">OK</ion-button>
+  </ion-item>
+</ion-content>

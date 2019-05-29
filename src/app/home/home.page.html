@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Escolha um período letivo</ion-label>
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss" (ionChange)="recuperarHorarios()"
+        [(ngModel)]="periodoLetivo">
+        <ion-item *ngFor="let periodoLetivo of listaPeriodosLetivos">
+          <ion-select-option value="{{periodoLetivo.CodigoPeriodoLetivo}}" >
+            {{periodoLetivo.DescricaoPeriodoLetivo}}
+          </ion-select-option>
+        </ion-item>  
+      </ion-select>
+    </ion-item> 
+  </ion-list>
+
+  <ion-card *ngFor="let horario of listaHorarios">
+    <ion-item>
+      <ion-icon name="md-calendar" slot="start"></ion-icon>
+      <ion-label>{{horario.NomeDisciplina}}</ion-label>
+    </ion-item>
+  
+    <ion-card-content>
+      <ion-label>Dia da semana: {{horario.NumeroDiaDaSemana}}</ion-label>
+      <br>
+      <ion-label>Descrição do dia da semana: {{horario.DescricaoDiaSemana}}</ion-label>
+      <br>
+      <ion-label>Horário Ínicio: {{horario.HoraInicio}}</ion-label>
+      <br>
+      <ion-label>Horário Fim: {{horario.HoraFim}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

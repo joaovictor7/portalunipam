@@ -1,0 +1,7 @@
+{
+  "name": "myWork",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

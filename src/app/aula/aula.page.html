@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-button end (click)="voltar()">
+            <ion-icon name="md-close-circle"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Aulas</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let disciplina of listaDisciplinas">
+    <ion-item>
+      <ion-icon name="md-list-box" slot="start"></ion-icon>
+      <ion-label>{{disciplina.NomeDisciplina}}</ion-label>
+    </ion-item>
+  
+    <div *ngFor="let aula of listaAulas">
+      <ion-item *ngIf="aula.CodigoDisciplina == disciplina.CodigoDisciplina">
+        <ion-card-content>
+          <ion-label>Código: {{aula.CodigoAula}}</ion-label>
+          <br>
+          <ion-label>Data: {{aula.DataAula}}</ion-label>
+          <br>
+          <ion-label>Quantidade de aulas: {{aula.QuantidadeAulas}}</ion-label>
+          <br>
+          <ion-label>Conteudo: {{aula.Conteudo}}</ion-label>
+          <br>
+          <ion-label>Indicador de faltas: {{aula.IndicadorDeFalta}}</ion-label>
+        </ion-card-content>
+      </ion-item>
+    </div>
+  </ion-card>
+</ion-content>
+  
+
+
+
+
+ 
